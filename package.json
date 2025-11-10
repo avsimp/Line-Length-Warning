@@ -1,0 +1,70 @@
+{
+  "name": "function-complexity",
+  "displayName": "Function Complexity",
+  "description": "Function Complexity provides colorful functions highlighting according to codestyle rules",
+  "version": "0.0.1",
+  
+  "engines": {
+    "vscode": "^1.105.0"
+  },
+  "categories": [
+    "Formatters"
+  ],
+  "extensionKind": [
+		"ui",
+		"workspace"
+	],
+  "activationEvents": [
+    "onLanguage:python",
+    "onLanguage:c",
+    "onLanguage:cpp"
+  ],
+  "main": "./out/extension.js",
+  
+  "contributes": {
+    "configuration": {
+      "title": "Line Length Warning",
+      "properties": {
+        "line-length-warning.warn_color": {
+          "type": "string",
+          "default": "#E3BD405C",
+          "description": "Warning length of the line will be indicated with this color"
+        },
+        "line-length-warning.warn_line": {
+          "type": "integer",
+          "default": 80,
+          "description": "After this number of characters extention will warn you"
+        },
+        "line-length-warning.alert_color": {
+          "type": "string",
+          "default": "#d64f3f5C",
+          "description": "Alert length of the line will be indicated with this color"
+        },
+        "line-length-warning.alert_line": {
+          "type": "integer",
+          "default": 100,
+          "description": "After this number of characters extention will alert you"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.105.0",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "22.x",
+    "@typescript-eslint/eslint-plugin": "^8.45.0",
+    "@typescript-eslint/parser": "^8.45.0",
+    "eslint": "^9.36.0",
+    "typescript": "^5.9.3",
+    "@vscode/test-cli": "^0.0.11",
+    "@vscode/test-electron": "^2.5.2"
+  }
+}
