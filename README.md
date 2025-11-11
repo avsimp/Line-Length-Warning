@@ -1,6 +1,6 @@
 # Line Length Warning
 
-Line Length Warning can help you with tracking your lines' lengths. It will mark your "out of bound" code by highlighting it. Extention has two types of highlighting: warning and alert. You can set your own colors and warn and alert values.
+Line Length Warning can help you with tracking your **lines' lengths**. It will mark your "out of bound" code by highlighting it. Extention has two types of highlighting: **warning** and **alert**. You can set your own colors and warn and alert values.
 
 ## Features
 
@@ -9,6 +9,8 @@ If a line has more characters then the `alert_line` value, it will be highlighte
 
 Video example:
 <video src="media/example.mp4" controls></video>
+
+Extention works with typescript, c++, c and python files.
 
 ## Extension Settings
 
@@ -24,6 +26,11 @@ This extension contributes the following settings:
 ### 1.0.0
 
 Initial release of Line Length Warning
+
+## Commit History
+
+- `443d934` - v0.1.1 codestyle fixes, minor package fixes.
+- `4d23025` - v0.1 stable build without documentation.
 
 
 

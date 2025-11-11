@@ -2,8 +2,10 @@
   "name": "line-length-warning",
   "displayName": "Line Length Warning",
   "description": "Line Length Warning can help you with tracking your lines' lengths. It will mark your 'out of bound' code by highlighting it.",
-  "version": "0.0.1",
-  
+  "version": "1.0.0",
+  "repository": {
+    "url": "https://github.com/avsimp/Line-Length-Warning"
+  },
   "engines": {
     "vscode": "^1.105.0"
   },
@@ -15,6 +17,7 @@
 		"workspace"
 	],
   "activationEvents": [
+    "onLanguage:typescript",
     "onLanguage:python",
     "onLanguage:c",
     "onLanguage:cpp"

@@ -1,39 +1,56 @@
 import * as vscode from 'vscode';
 import { Parser } from './parser';
 
-function UpdateDecorations(activeEditor:vscode.TextEditor | undefined, parser: Parser) {
-	if (!activeEditor) return;
+/*
+Finds all lines needed to highlight and apply decorations for them.
+
+Input:	cur_editor (vscode.TextEditor | undefined) - current vs code editor.
+		parser (Parser) - current parser (from parser.ts).
+Output:	void. if lines find they will be decorated. */
+function UpdateDecorations(cur_editor:vscode.TextEditor | undefined, parser: Parser) {
+	if (!cur_editor) return;
 	if (!parser.is_supported_lang) return;
 
-	parser.FindWarnLines(activeEditor);
-	parser.FindAlertLines(activeEditor);
-	parser.ApplyDecorations(activeEditor);
+	parser.FindWarnLines(cur_editor);
+	parser.FindAlertLines(cur_editor);
+	parser.ApplyDecorations(cur_editor);
 };
+
+// This method is called when extension is activated
 export function activate(context: vscode.ExtensionContext) {
-	let active_editor: vscode.TextEditor | undefined;
+	let cur_editor: vscode.TextEditor | undefined;
 	let parser: Parser = new Parser();
 
-	if (vscode.window.activeTextEditor) {
-		active_editor = vscode.window.activeTextEditor;
+	if (vscode.window.activeTextEditor) { // during the launch we set current editor
+		cur_editor = vscode.window.activeTextEditor;
 
-		parser.CheckIfSupportedLang(active_editor.document.languageId);
-		UpdateDecorations(active_editor, parser);
+		parser.CheckIfSupportedLang(cur_editor.document.languageId);
+		UpdateDecorations(cur_editor, parser);
 	}
 
+	/*
+	When current editor has changed, we update it.
+
+	Input: 	editor (vscode.TextEditor | undefined) - new current editor.
+	Output:	void. */
 	vscode.window.onDidChangeActiveTextEditor( (editor) => {
-		active_editor = editor;
+		cur_editor = editor;
 		if (editor) {
 			parser.CheckIfSupportedLang(editor.document.languageId);
-			UpdateDecorations(active_editor, parser);
+			UpdateDecorations(cur_editor, parser);
 		}
 	});
+	/*
+	When curent document was updated, we update decorations.
 
+	Input: 	editor (vscode.TextEditor | undefined) - new current editor.
+	Output:	void. */
 	vscode.workspace.onDidChangeTextDocument( (event) => {
-		if (active_editor && event.document === active_editor.document) {
-			UpdateDecorations(active_editor, parser);
+		if (cur_editor && event.document === cur_editor.document) {
+			UpdateDecorations(cur_editor, parser);
 		}
 	});
 }
 
-// This method is called when your extension is deactivated
+// This method is called when extension is deactivated
 export function deactivate() {}
