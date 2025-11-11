@@ -1,3 +1,5 @@
+Author: Ladaev Timofey M3101 501902
+
 # Line Length Warning
 
 Line Length Warning can help you with tracking your **lines' lengths**. It will mark your "out of bound" code by highlighting it. Extention has two types of highlighting: **warning** and **alert**. You can set your own colors and warn and alert values.
@@ -29,6 +31,7 @@ Initial release of Line Length Warning
 
 ## Commit History
 
+- `1ac03b8` - v1.0.0 release version.
 - `443d934` - v0.1.1 codestyle fixes, minor package fixes.
 - `4d23025` - v0.1 stable build without documentation.
 
