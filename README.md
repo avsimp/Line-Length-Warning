@@ -31,6 +31,8 @@ Initial release of Line Length Warning
 
 ## Commit History
 
+- `56e97b4` - Delete line-length-warning-1.0.0 directory.
+- `2fd2a23` - v1.0.0 readme gif test.
 - `fc30a7c` - v1.0.0 author added.
 - `1ac03b8` - v1.0.0 release version.
 - `443d934` - v0.1.1 codestyle fixes, minor package fixes.
