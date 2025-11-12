@@ -9,8 +9,8 @@ Line Length Warning can help you with tracking your **lines' lengths**. It will 
 If a line has more characters then the `warn_line` value, but less then the `alert_line` value, it will be highlighted in the `warn_color`.\
 If a line has more characters then the `alert_line` value, it will be highlighted by `alert_color`.
 
-Video example:
-<video src="media/example.mp4" controls></video>
+Example:
+![example](https://raw.githubusercontent.com/avsimp/Line-Length-Warning/main/media/example.gif)
 
 Extention works with typescript, c++, c and python files.
 
@@ -31,6 +31,7 @@ Initial release of Line Length Warning
 
 ## Commit History
 
+- `fc30a7c` - v1.0.0 author added.
 - `1ac03b8` - v1.0.0 release version.
 - `443d934` - v0.1.1 codestyle fixes, minor package fixes.
 - `4d23025` - v0.1 stable build without documentation.

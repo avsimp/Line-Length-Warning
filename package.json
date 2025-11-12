@@ -24,6 +24,7 @@
   ],
   "main": "./out/extension.js",
   
+  
   "contributes": {
     "configuration": {
       "title": "Line Length Warning",
