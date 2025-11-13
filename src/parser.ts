@@ -23,8 +23,8 @@ export class Parser {
     /*
     Checks if current document language is suppeorted.
     
-    Input:  language_code (string) - language code, provided by vs code.
-    Output: void. parser.is_supported_lang updates. */
+    Receive:    language_code (string) - language code, provided by vs code.
+    Return:     void. parser.is_supported_lang updates. */
     public CheckIfSupportedLang(language_code: string): void {
         if (language_code === "cpp" || language_code === "c" ||
             language_code === "python" || language_code === "typescript") {
@@ -37,8 +37,8 @@ export class Parser {
     /*
     Finds all alert lines and update parser.alert_ranges.
     
-    Input:  cur_editor (vscode.TextEdito) - current vs code editor.
-    Output: void. parser.alert_ranges updates. */
+    Receive:    cur_editor (vscode.TextEdito) - current vs code editor.
+    Return:     void. parser.alert_ranges updates. */
     public FindAlertLines(cur_editor: vscode.TextEditor): void {
         let text = cur_editor.document.getText();
         let match: any;
@@ -54,8 +54,8 @@ export class Parser {
     /*
     Finds all warn lines and update parser.warn_ranges.
     
-    Input:  cur_editor (vscode.TextEdito) - current vs code editor.
-    Output: void. parser.warn_ranges updates. */
+    Receive:    cur_editor (vscode.TextEdito) - current vs code editor.
+    Return:     void. parser.warn_ranges updates. */
     public FindWarnLines(cur_editor: vscode.TextEditor): void {
         let text = cur_editor.document.getText();
         let match: any;
@@ -72,8 +72,8 @@ export class Parser {
     /*
     Apply decorations according to warn/alert ranges and parser.alert/warn_decoration.
     
-    Input:  cur_editor (vscode.TextEdito) - current vs code editor.
-    Output: void. Decorations will be set. */
+    Receive:    cur_editor (vscode.TextEdito) - current vs code editor.
+    Return:     void. Decorations will be set. */
     public ApplyDecorations(cur_editor: vscode.TextEditor): void {
         cur_editor.setDecorations(this.warn_decoration, this.warn_ranges);
         cur_editor.setDecorations(this.alert_decoration, this.alert_ranges);

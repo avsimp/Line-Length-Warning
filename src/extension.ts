@@ -4,9 +4,9 @@ import { Parser } from './parser';
 /*
 Finds all lines needed to highlight and apply decorations for them.
 
-Input:	cur_editor (vscode.TextEditor | undefined) - current vs code editor.
-		parser (Parser) - current parser (from parser.ts).
-Output:	void. if lines find they will be decorated. */
+Receive:	cur_editor (vscode.TextEditor | undefined) - current vs code editor.
+			parser (Parser) - current parser (from parser.ts).
+Return:		void. if lines find they will be decorated. */
 function UpdateDecorations(cur_editor:vscode.TextEditor | undefined, parser: Parser) {
 	if (!cur_editor) return;
 	if (!parser.is_supported_lang) return;
@@ -31,8 +31,8 @@ export function activate(context: vscode.ExtensionContext) {
 	/*
 	When current editor has changed, we update it.
 
-	Input: 	editor (vscode.TextEditor | undefined) - new current editor.
-	Output:	void. */
+	Receive: 	editor (vscode.TextEditor | undefined) - new current editor.
+	Return:		void. */
 	vscode.window.onDidChangeActiveTextEditor( (editor) => {
 		cur_editor = editor;
 		if (editor) {
@@ -43,8 +43,8 @@ export function activate(context: vscode.ExtensionContext) {
 	/*
 	When curent document was updated, we update decorations.
 
-	Input: 	editor (vscode.TextEditor | undefined) - new current editor.
-	Output:	void. */
+	Receive:	editor (vscode.TextEditor | undefined) - new current editor.
+	Return:		void. */
 	vscode.workspace.onDidChangeTextDocument( (event) => {
 		if (cur_editor && event.document === cur_editor.document) {
 			UpdateDecorations(cur_editor, parser);

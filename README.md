@@ -23,14 +23,9 @@ This extension contributes the following settings:
 * `line-length-warning.alert_color`: color for alerts (`#d64f3f5C` by default).
 * `line-length-warning.alert_line`: limit for line length before an alert (`100` by default).
 
-## Release Notes
-
-### 1.0.0
-
-Initial release of Line Length Warning
-
 ## Commit History
 
+- `6440839` - v1.0.0 icon added, readme update.
 - `56e97b4` - Delete line-length-warning-1.0.0 directory.
 - `2fd2a23` - v1.0.0 readme gif test.
 - `fc30a7c` - v1.0.0 author added.
@@ -38,5 +33,6 @@ Initial release of Line Length Warning
 - `443d934` - v0.1.1 codestyle fixes, minor package fixes.
 - `4d23025` - v0.1 stable build without documentation.
 
-
-
+## More information
+[Change log](CHANGELOG.md)\
+[Functions overview](FUNCTIONS.md)
