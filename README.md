@@ -25,6 +25,7 @@ This extension contributes the following settings:
 
 ## Commit History
 
+- `c685343` - Delete .vscode directory.
 - `a358b9b` - v1.0.0 readme updated. function overview added.
 - `6440839` - v1.0.0 icon added, readme update.
 - `56e97b4` - Delete line-length-warning-1.0.0 directory.
